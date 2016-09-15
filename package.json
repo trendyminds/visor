@@ -1,0 +1,30 @@
+{
+  "name": "visor",
+  "version": "1.0.0",
+  "description": "A simple admin overlay to get to the relevant areas of the Craft CMS control panel",
+  "main": "index.js",
+  "scripts": {
+    "styles": "postcss --config postcss.json _styles/*.css",
+    "stylesMinify": "cleancss -o ./visor/resources/css/visor.css ./visor/resources/css/visor.css",
+    "scriptsMinify": "uglifyjs ./_scripts/visor.js -o ./visor/resources/js/visor.js",
+    "build": "npm run styles && npm run stylesMinify && npm run scriptsMinify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trendyminds/visor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trendyminds/visor/issues"
+  },
+  "homepage": "https://github.com/trendyminds/visor#readme",
+  "devDependencies": {
+    "autoprefixer": "6.4.1",
+    "clean-css": "3.4.19",
+    "postcss": "5.2.0",
+    "postcss-cli": "2.6.0",
+    "postcss-nested": "1.0.0",
+    "uglify-js": "2.7.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "use": [
+    "autoprefixer",
+    "postcss-nested"
+  ],
+  "output": "./visor/resources/css/visor.css",
+  "autoprefixer": {
+    "browsers": "last 3 versions"
+  }
+}
