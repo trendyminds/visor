@@ -116,10 +116,7 @@
     border: none;
     border-radius: 100%;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
-    color: #888;
     height: 30px;
-    font-size: 34px;
-    line-height: 30px;
     outline: none;
     padding: 0;
     position: absolute;
@@ -133,6 +130,14 @@
 
   &__close:hover {
     transform: scale3d(1, 1, 1);
+  }
+
+  &__close svg {
+    fill: #888;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__entry {
@@ -176,12 +181,12 @@
   &__entry-title {
     color: #fff;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif !important;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 18px !important;
+    font-weight: bold !important;
     margin: 0 0 8px;
 
     @media (min-width: 40em) {
-      font-size: 24px;
+      font-size: 24px !important;
     }
   }
 
