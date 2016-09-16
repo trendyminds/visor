@@ -176,12 +176,12 @@
   &__entry-title {
     color: #fff;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif !important;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 18px !important;
+    font-weight: bold !important;
     margin: 0 0 8px;
 
     @media (min-width: 40em) {
-      font-size: 24px;
+      font-size: 24px !important;
     }
   }
 
