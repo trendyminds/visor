@@ -1,7 +1,16 @@
 [
   {
+    "version": "1.0.1",
+    "downloadUrl": "https://github.com/trendyminds/visor/archive/1.0.1.zip",
+    "date": "2016-09-16T10:15:00+10:00",
+    "notes": [
+      "[Added] Replace close button with an SVG icon to make customization and positioning easier",
+      "[Improved] Added !important to some typography so your site's CSS doesn't cascade down into Visor and cause visual issues. If you want to use your custom font in Visor you still may override styles using the 'craft-visor--override' class"
+    ]
+  },
+  {
     "version": "1.0.0",
-    "downloadUrl": "https://github.com/trendyminds/visor/archive/master.zip",
+    "downloadUrl": "https://github.com/trendyminds/visor/archive/1.0.0.zip",
     "date": "2016-09-16T10:15:00+10:00",
     "notes": [
       "[Added] Initial release"

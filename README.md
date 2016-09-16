@@ -56,6 +56,6 @@ We welcome anyone and everyone who would like to improve Visor to fork it and se
 
 ## Visor Changelog
 
-### 1.0.0 -- 2016.09.16
+[View the JSON changelog](https://github.com/trendyminds/visor/blob/master/releases.json)
 
 * Initial release
