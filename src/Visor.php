@@ -76,7 +76,18 @@ class Visor extends Plugin
         );
 
         Craft::$app->view->hook('visor', function(array &$context) {
-            return Visor::$plugin->visorService->render($context["entry"]);
+            // Set the title to something in case we're not in an entry
+            $entry = (object) [
+                "title" => Craft::$app->getConfig()->general->siteName
+            ];
+
+            // If we are in an entry context, use it in place of our dummy object
+            if (isset($context["entry"]))
+            {
+                $entry = $context["entry"];
+            }
+
+            return Visor::$plugin->visorService->render($entry);
         });
     }
 }
