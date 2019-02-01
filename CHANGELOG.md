@@ -1,5 +1,10 @@
 # Release Notes for Visor
 
+## 2.0.2 - 2019-02-01
+
+### Fixed
+- Corrected issue where missing $entry would cause the plugin to break
+
 ## 2.0.1 - 2019-02-01
 
 ### Changed
