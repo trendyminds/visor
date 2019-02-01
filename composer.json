@@ -1,0 +1,43 @@
+{
+    "name": "trendyminds/visor",
+    "description": "A simple admin overlay to get to the relevant areas of the Craft CMS control panel",
+    "type": "craft-plugin",
+    "version": "2.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "visor"
+    ],
+    "support": {
+        "docs": "https://github.com/trendyminds/visor/blob/master/README.md",
+        "issues": "https://github.com/trendyminds/visor/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TrendyMinds",
+            "homepage": "https://trendyminds.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "trendyminds\\visor\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Visor",
+        "handle": "visor",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/trendyminds/visor/master/CHANGELOG.md",
+        "components": {
+            "visorService": "trendyminds\\visor\\services\\VisorService"
+        },
+        "class": "trendyminds\\visor\\Visor"
+    }
+}
