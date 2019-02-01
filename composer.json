@@ -2,13 +2,15 @@
     "name": "trendyminds/visor",
     "description": "A simple admin overlay to get to the relevant areas of the Craft CMS control panel",
     "type": "craft-plugin",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "keywords": [
         "craft",
         "cms",
         "craftcms",
         "craft-plugin",
-        "visor"
+        "visor",
+        "utility",
+        "dashboard"
     ],
     "support": {
         "docs": "https://github.com/trendyminds/visor/blob/master/README.md",

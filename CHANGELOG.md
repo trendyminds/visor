@@ -1,6 +1,11 @@
 # Release Notes for Visor
 
-## 2.0.0b - 2019-02-01
+## 2.0.1 - 2019-02-01
+
+### Changed
+- Altered styles to better match Craft 2.x variant
+
+## 2.0.0 - 2019-02-01
 
 ### Added
 - Craft 3 support

@@ -32,6 +32,7 @@
   border: none;
   background: none;
   margin: 0;
+  outline: none;
   padding: 0;
   position: fixed;
   bottom: 1rem;
@@ -41,11 +42,22 @@
 
 .Visor__toggle svg {
   filter: drop-shadow(0 2px 0 #999);
+  opacity: 0.5;
+  transition: transform .1s;
+}
+
+.Visor__toggle:hover svg {
+  opacity: .75;
+  transform: scale3d(1.2, 1.2, 1);
+}
+
+.Visor__toggle:active svg {
+  opacity: .95;
+  transform: scale3d(.85, .85, 1);
 }
 
 .Visor__toggle path {
   fill: #fff;
-  opacity: 0.5;
 }
 
 .Visor__modal {
@@ -80,10 +92,21 @@
   border-radius: 1.5rem;
   height: 1.5rem;
   width: 1.5rem;
+  outline: none;
   right: -0.75rem;
   top: -0.75rem;
   padding: 0;
+  transform: scale3d(1, 1, 1);
+  transition: .15s transform;
   margin: 0;
+}
+
+.Visor__close:hover {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+.Visor__close:active {
+  transform: scale3d(.95, .95, 1);
 }
 
 .Visor__close rect {
@@ -162,6 +185,10 @@
   text-decoration: none;
 }
 
+.Visor__link:hover {
+  color: #2178a3;
+}
+
 .Visor__link-icon {
   display: block;
   margin-bottom: 0.75rem;
@@ -172,10 +199,15 @@
 
 .Visor__link-icon path {
   fill: #ccc;
+  transition: .15s fill;
 }
 
 .Visor__link:hover .Visor__link-icon {
-  transform: translate3d(0, -0.5rem, 0);
+  transform: scale3d(1.2, 1.2, 1);
+}
+
+.Visor__link:hover .Visor__link-icon path {
+  fill: #2178a3;
 }
 
 @media (min-width: 40em) {
