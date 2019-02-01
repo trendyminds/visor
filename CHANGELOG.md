@@ -1,5 +1,10 @@
 # Release Notes for Visor
 
+## 2.0.3 - 2019-02-01
+
+### Fixed
+- Ensure Visor only fires if a user is logged in
+
 ## 2.0.2 - 2019-02-01
 
 ### Fixed

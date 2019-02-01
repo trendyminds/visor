@@ -75,7 +75,13 @@ class Visor extends Plugin
             __METHOD__
         );
 
-        Craft::$app->view->hook('visor', function(array &$context) {
+        // If the user isn't logged in, return and move on.
+        if (Craft::$app->getUser()->isGuest)
+        {
+            return false;
+        }
+
+        Craft::$app->view->hook('visor', function (array &$context) {
             // Set the title to something in case we're not in an entry
             $entry = (object) [
                 "title" => Craft::$app->getConfig()->general->siteName
