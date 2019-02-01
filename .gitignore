@@ -12,7 +12,7 @@
 /build/*
 /yarn-error.log
 .cache
-.map
+*.map
 
 # MISC FILES
 .cache

@@ -1,5 +1,10 @@
 # Release Notes for Visor
 
+## 2.0.4 - 2019-02-01
+
+### Fixed
+- Remove source maps from build
+
 ## 2.0.3 - 2019-02-01
 
 ### Fixed
