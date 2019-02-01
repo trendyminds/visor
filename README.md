@@ -66,4 +66,4 @@ We welcome anyone and everyone who would like to improve Visor to fork it and se
 
 ## Visor Changelog
 
-[View the JSON changelog](https://github.com/trendyminds/visor/blob/master/releases.json)
+[View the changelog](https://github.com/trendyminds/visor/blob/master/CHANGELOG.md)
