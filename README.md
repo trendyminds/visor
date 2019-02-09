@@ -25,6 +25,7 @@ To install the plugin, follow these instructions.
         composer require trendyminds/visor
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Visor.
+4. Add `{% hook "visor" %}` to your template to add Visor to that page. It's recommended to add this code to your main `_layout.html` file
 
 ## Keyboard Shortcuts
 
