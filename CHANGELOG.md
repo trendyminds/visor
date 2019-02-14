@@ -1,5 +1,10 @@
 # Release Notes for Visor
 
+## 2.0.5 - 2019-02-14
+
+### Fixed
+- Corrected issue where only admins saw the "Edit entry" option ([#7](https://github.com/trendyminds/visor/issues/7))
+
 ## 2.0.4 - 2019-02-01
 
 ### Fixed

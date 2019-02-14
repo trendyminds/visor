@@ -2,7 +2,7 @@
     "name": "trendyminds/visor",
     "description": "A simple admin overlay to get to the relevant areas of the Craft CMS control panel",
     "type": "craft-plugin",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "keywords": [
         "craft",
         "cms",
