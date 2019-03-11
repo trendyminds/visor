@@ -1,6 +1,9 @@
 # <img src="src/icon.svg" width="35" alt="Visor logo"> Visor
 
-A simple admin overlay to get to the relevant areas of the Craft CMS control panel.
+![Screenshot](resources/promo.png)
+
+## What is Visor?
+Visor is a simple admin overlay to get to the relevant areas of the Craft CMS control panel from the front-end of your site.
 
 ## Demo
 ![Visor Demo](resources/demo.gif)
