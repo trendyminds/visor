@@ -18,6 +18,8 @@ use craft\services\Plugins;
 use craft\events\PluginEvent;
 
 use yii\base\Event;
+use craft\web\UrlManager;
+use craft\events\RegisterUrlRulesEvent;
 
 /**
  * Class Visor
@@ -75,25 +77,32 @@ class Visor extends Plugin
             __METHOD__
         );
 
-        // If the user isn't logged in, return and move on.
-        if (Craft::$app->getUser()->isGuest)
-        {
-            return false;
-        }
+        // Register our site routes
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                // If the user isn't logged in, return and move on.
+                if (Craft::$app->getUser()->getIsGuest())
+                {
+                    return false;
+                }
 
-        Craft::$app->view->hook('visor', function (array &$context) {
-            // Set the title to something in case we're not in an entry
-            $entry = (object) [
-                "title" => Craft::$app->getConfig()->general->siteName
-            ];
+                Craft::$app->view->hook('visor', function (array &$context) {
+                    // Set the title to something in case we're not in an entry
+                    $entry = (object) [
+                        "title" => Craft::$app->getConfig()->general->siteName
+                    ];
 
-            // If we are in an entry context, use it in place of our dummy object
-            if (isset($context["entry"]))
-            {
-                $entry = $context["entry"];
+                    // If we are in an entry context, use it in place of our dummy object
+                    if (isset($context["entry"]))
+                    {
+                        $entry = $context["entry"];
+                    }
+
+                    return Visor::$plugin->visorService->render($entry);
+                });
             }
-
-            return Visor::$plugin->visorService->render($entry);
-        });
+        );
     }
 }

@@ -1,5 +1,12 @@
 # Release Notes for Visor
 
+## 2.1.0 - 2019-04-04
+
+### Changed
+- Call template hook in `EVENT_REGISTER_SITE_URL_RULES` to prevent potential race condition where Visor did not render
+- Use `getIsGuest()` to determine if the user is signed in or not
+- Require Craft `3.1.20` or higher
+
 ## 2.0.5 - 2019-02-14
 
 ### Fixed
