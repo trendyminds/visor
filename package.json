@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.11.0"
+    "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
     "hotkeys-js": "^3.4.3"

@@ -1,5 +1,10 @@
 # Release Notes for Visor
 
+## 2.1.1 - 2020-01-02
+
+### Changed
+- Update Node packages to address vulnerabilities provided by GitHub
+
 ## 2.1.0 - 2019-04-04
 
 ### Changed
