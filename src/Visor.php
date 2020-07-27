@@ -10,99 +10,44 @@
 
 namespace trendyminds\visor;
 
-use trendyminds\visor\services\VisorService as VisorServiceService;
-
 use Craft;
 use craft\base\Plugin;
-use craft\services\Plugins;
-use craft\events\PluginEvent;
 
 use yii\base\Event;
-use craft\web\UrlManager;
-use craft\events\RegisterUrlRulesEvent;
+use craft\events\TemplateEvent;
+use craft\web\View;
+use trendyminds\visor\assetbundles\VisorAsset;
+use yii\base\InvalidConfigException;
 
 /**
  * Class Visor
  *
  * @author    TrendyMinds
  * @package   Visor
- * @since     2.0.0
- *
- * @property  VisorServiceService $visorService
+ * @since     3.0.0
  */
 class Visor extends Plugin
 {
-    // Static Properties
-    // =========================================================================
-
-    /**
-     * @var Visor
-     */
-    public static $plugin;
-
-    // Public Properties
-    // =========================================================================
-
-    /**
-     * @var string
-     */
-    public $schemaVersion = '2.0.0';
-
-    // Public Methods
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
     public function init()
     {
         parent::init();
-        self::$plugin = $this;
 
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                }
-            }
-        );
-
-        Craft::info(
-            Craft::t(
-                'visor',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
-
-        // Register our site routes
-        Event::on(
-            UrlManager::class,
-            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
-            function (RegisterUrlRulesEvent $event) {
-                // If the user isn't logged in, return and move on.
-                if (Craft::$app->getUser()->getIsGuest())
-                {
-                    return false;
-                }
-
-                Craft::$app->view->hook('visor', function (array &$context) {
-                    // Set the title to something in case we're not in an entry
-                    $entry = (object) [
-                        "title" => Craft::$app->getConfig()->general->siteName
-                    ];
-
-                    // If we are in an entry context, use it in place of our dummy object
-                    if (isset($context["entry"]))
-                    {
-                        $entry = $context["entry"];
+        // Dynamically insert Visor if this is a site request and the user is signed in
+        if (Craft::$app->getRequest()->getIsSiteRequest()) {
+            Event::on(
+                View::class,
+                View::EVENT_BEFORE_RENDER_TEMPLATE,
+                function (TemplateEvent $event) {
+                    try {
+                        Craft::$app->getView()->registerAssetBundle(VisorAsset::class);
+                    } catch (InvalidConfigException $e) {
+                        Craft::error('Could not register the Visor asset bundle.');
                     }
-
-                    return Visor::$plugin->visorService->render($entry);
-                });
-            }
-        );
+                }
+            );
+        }
     }
 }
