@@ -12,12 +12,12 @@ namespace trendyminds\visor;
 
 use Craft;
 use craft\base\Plugin;
+use craft\web\UrlManager;
 
 use yii\base\Event;
-use craft\events\TemplateEvent;
-use craft\web\View;
-use trendyminds\visor\assetbundles\VisorAsset;
 use yii\base\InvalidConfigException;
+
+use trendyminds\visor\assetbundles\VisorAsset;
 
 /**
  * Class Visor
@@ -35,19 +35,19 @@ class Visor extends Plugin
     {
         parent::init();
 
-        // Dynamically insert Visor if this is a site request and the user is signed in
-        if (Craft::$app->getRequest()->getIsSiteRequest()) {
-            Event::on(
-                View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE,
-                function (TemplateEvent $event) {
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
+            function () {
+                // When the Visor hook is used, register the asset bundle for the JS functionality
+                Craft::$app->view->hook('visor', function () {
                     try {
                         Craft::$app->getView()->registerAssetBundle(VisorAsset::class);
                     } catch (InvalidConfigException $e) {
                         Craft::error('Could not register the Visor asset bundle.');
                     }
-                }
-            );
-        }
+                });
+            }
+        );
     }
 }
