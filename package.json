@@ -1,6 +1,6 @@
 {
   "name": "visor",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A simple admin overlay to get to the relevant areas of the Craft CMS control panel",
   "main": "index.js",
   "scripts": {
