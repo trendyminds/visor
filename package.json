@@ -12,18 +12,10 @@
   "license": "ISC",
   "prettier": {},
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-transform-runtime": "^7.10.5",
     "parcel-bundler": "^1.12.4",
     "prettier": "2.0.5"
   },
   "dependencies": {
-    "@trendyminds/delay": "^1.1.0",
     "hotkeys-js": "^3.8.1"
-  },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-transform-runtime"
-    ]
   }
 }
