@@ -1,49 +1,19 @@
-import hotkeys from "hotkeys-js";
-import "./visor.css";
+(() => {
+  fetch("/actions/visor/default/access")
+    .then((res) => {
+      // Did we encounter a non 200 status code? If so, exit
+      if (res.status !== 200) {
+        return false;
+      }
 
-class Visor {
-  constructor() {
-    this.isOpen = false;
-    this.$toggle = document.querySelectorAll("[data-visor-toggle]");
-    this.$modal = document.querySelector("[data-visor]");
-
-    this.handleToggle = this.handleToggle.bind(this);
-    this.open = this.open.bind(this);
-    this.close = this.close.bind(this);
-
-    this.events();
-  }
-
-  events() {
-    this.$toggle.forEach($toggle => {
-      $toggle.addEventListener("click", this.handleToggle)
+      // Proceed if the page ran
+      return res.text();
+    })
+    .then((data) => {
+      // Only output something to the page if we received data
+      if (data) {
+        document.body.insertAdjacentHTML("beforeend", data);
+        import("./init").then((module) => new module.default());
+      }
     });
-
-    hotkeys("`", this.handleToggle);
-    hotkeys("esc", this.close);
-  }
-
-  handleToggle() {
-    if (this.isOpen) {
-      return this.close();
-    }
-
-    return this.open();
-  }
-
-  close() {
-    this.isOpen = false;
-    this.$modal.classList.remove("is-open");
-
-    return true;
-  }
-
-  open() {
-    this.isOpen = true;
-    this.$modal.classList.add("is-open");
-
-    return true;
-  }
-}
-
-new Visor();
+})();

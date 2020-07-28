@@ -1,19 +1,21 @@
 {
   "name": "visor",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "A simple admin overlay to get to the relevant areas of the Craft CMS control panel",
   "main": "index.js",
   "scripts": {
-    "start": "parcel watch resources/visor.js --out-dir src/resources",
-    "build": "parcel build resources/visor.js --out-dir src/resources"
+    "start": "parcel watch resources/visor.js --out-dir src/resources --no-source-maps",
+    "build": "parcel build resources/visor.js --out-dir src/resources --no-source-maps --no-content-hash"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prettier": {},
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "prettier": "2.0.5"
   },
   "dependencies": {
-    "hotkeys-js": "^3.4.3"
+    "hotkeys-js": "^3.8.1"
   }
 }

@@ -1,5 +1,17 @@
 # Release Notes for Visor
 
+## 3.0.0 - 2020-07-27
+
+> {warning} Visor 3 is a full rewrite of the plugin to play nicely with full-page static caching solutions like [Blitz](https://plugins.craftcms.com/blitz). Please ensure you are familiar with the [caveats to providing full-page static caching support](https://github.com/trendyminds/visor#caveats)
+
+### Added
+- Support for full-page static caching
+- Support for Category detection
+- Support for Solspace Events detection
+
+### Changed
+- When Visor hook is used, a network request is made to fetch the controls. Please ensure you are familiar with the [caveats introduced in 3.0 to provide full-page static caching support](https://github.com/trendyminds/visor#caveats)
+
 ## 2.1.1 - 2020-01-02
 
 ### Changed
