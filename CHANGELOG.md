@@ -1,5 +1,10 @@
 # Release Notes for Visor
 
+## 3.0.1 - 2020-07-27
+
+### Fixed
+- Remove support for browsers that do not have `fetch` (IE 11)
+
 ## 3.0.0 - 2020-07-27
 
 > {warning} Visor 3 is a full rewrite of the plugin to play nicely with full-page static caching solutions like [Blitz](https://plugins.craftcms.com/blitz). Please ensure you are familiar with the [caveats to providing full-page static caching support](https://github.com/trendyminds/visor#caveats)

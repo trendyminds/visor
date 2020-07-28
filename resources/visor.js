@@ -1,4 +1,11 @@
 (() => {
+  // If the browser does not support fetch, exit out (modern only!)
+  const fetchSupport = "fetch" in window;
+
+  if (!fetchSupport) {
+    return false;
+  }
+
   fetch("/actions/visor/default/access")
     .then((res) => {
       // Did we encounter a non 200 status code? If so, exit
